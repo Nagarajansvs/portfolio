@@ -1429,7 +1429,7 @@ mark {
 
 }
 .about-info .media span {
-  font-size: 50px;
+  font-size: 40px;
   line-height: 1;
   color: var(--primary-color);
   font-weight: 600;
@@ -1593,6 +1593,7 @@ mark {
   width: 100%;
   margin-top: 15px;
   background: #0b0b13;
+  border-radius: 10px;
 }
 .theme-light .resume-box {
   background: #f7f7ff;
@@ -1797,6 +1798,7 @@ mark {
 .contact-info {
   background: #0b0b13;
   padding: 30px;
+  border-radius: 10px;
 }
 .theme-light .contact-info {
   background: #f7f7ff;
@@ -1850,6 +1852,7 @@ mark {
 .contact-form {
   background: #0b0b13;
   padding: 30px;
+  border-radius: 10px;
 }
 .theme-light .contact-form {
   background: #f7f7ff;
@@ -1878,7 +1881,8 @@ mark {
   height: calc(2em + .75rem + 2px);
 }
 .contact-form .form-control.invalid {
-  border-color: #dc3545 !important;
+  /* border-color: #dc3545 !important; */
+  border-color: var(--primary-color) !important;
 }
 .theme-light .contact-form .form-control {
   color: #0b0b13;
@@ -1923,13 +1927,13 @@ ul.about-list {
 }
 ul.about-list li {
   flex: 0 0 50%;
-  margin: 1rem auto;
+  margin: 1rem 0;
   max-width: 50%;
   text-align: left;
 }
 .about-list li span {
   color: #fff;
-  font-weight: 800;
+  font-weight: 500;
 }
 span.titile {
   font-weight: 500 !important;
