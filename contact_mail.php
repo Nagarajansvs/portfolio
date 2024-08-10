@@ -9,10 +9,10 @@ $mail = new PHPMailer;
                             // Enable verbose debug output
 
     $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
+    // $lname = $_POST['lname'];
     $mobile = $_POST['mobile'];
     $email = $_POST['email'];
-    $budget= $_POST['budget'];
+    // $budget= $_POST['budget'];
     $description = $_POST['description'];
     
     if(!empty($_POST['pcat'])){
