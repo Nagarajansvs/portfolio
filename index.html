@@ -1101,6 +1101,41 @@
                     <div class="col-lg-7 col-xl-8 m-15px-tb">
                         <div class="contact-form">
                             <h4>Say Something</h4>
+
+
+                            <form id="contact-form" method="POST" action="contact_mail.php">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input name="fname" id="name" placeholder="Name *" class="form-control" type="text" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input name="email" id="email" placeholder="Email *" class="form-control" type="email" required>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-12">
+                                        <div class="form-group">
+                                            <input name="Subject" id="subject" placeholder="Subject *" class="form-control" type="text" required>
+                                        </div>
+                                    </div> -->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea name="description" id="message" placeholder="Your message *" rows="5" class="form-control" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="send">
+                                            <button class="px-btn px-btn-theme" type="submit" value="Send"> Send Message</button>
+                                        </div>
+                                        <span id="suce_message" class="text-success" style="display: none">Message Sent Successfully</span>
+                                        <span id="err_message" class="text-danger" style="display: none">Message Sending Failed</span>
+                                    </div>
+                                </div>
+                            </form>
+
+                            
                             <form id="contact-form" method="POST">
                                 <div class="row">
                                     <div class="col-md-6">
