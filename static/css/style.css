@@ -2033,3 +2033,20 @@ span.titile {
     width: 50%;
   }
 }
+
+
+
+
+
+ul.about-list.list-unstyled
+{
+      padding: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+    background: #0b0b13;
+    -moz-transition: ease background 0.35s;
+    -o-transition: ease background 0.35s;
+    -webkit-transition: ease background 0.35s;
+    transition: ease background 0.35s;
+}
