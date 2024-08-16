@@ -201,7 +201,7 @@
                     loop: true,
                     strings: [
                         'Web Designer',
-                        'UI Designer',
+                        'UI Developer',
                         'Freelancer'
                     ],
                     breakLines: false
