@@ -1,0 +1,103 @@
+@media (max-width: 767px) 
+{
+    .bd-placeholder-img-lg 
+    {
+      font-size: 3.5rem;
+    }
+    .booking-form .form-group .form-control
+    {
+        /* height: 3rem !important; */
+    }
+    a.txt-wdgt-btn.btn-default.d-flex.justify-content-center.align-items-center.align-self-stretch.form-control.py-lg-4.py-xl-0
+    {
+        padding: 0.5rem;
+    }
+    .booking-form .form-group .form-control.btn 
+    {
+        padding: 25px 20px !important;
+    }
+    .heading-section h2, .heading-section .h2 {
+        font-size: 2rem;
+    }
+    .booknow-intro h1
+    {
+        font-size: 1.5rem;
+    }
+    .services
+    {
+        border-radius: 5%;
+        margin-bottom: 0.5rem;
+    }
+    section#book-now {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    section#book-now .col-md-4.d-flex.align-items-center
+    {
+        justify-content: center;
+    }
+    .form-section
+    {
+        text-align: center;
+    }
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+    .carousel-caption p {
+        font-size: 0.9rem !important;
+    }
+    .carousel-item {
+        height: 45rem !important;
+      }
+      .carousel-caption .btn
+      {
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .section-counter .counter-wrap
+      {
+        padding: 3rem 1rem;
+      }
+      .mobile-btn, .nav-link
+      {
+        text-align: center;
+      }
+}
+@media (min-width: 768px) and (max-width: 1356px) 
+{
+    .carousel-caption h1
+    {
+        font-size: 2rem;
+    }
+    .services
+    {
+        border-radius: 5%;
+        margin-bottom: 0.5rem;
+    }
+    .heading-section h2, .heading-section .h2 {
+        font-size: 3rem;
+    }
+    a.txt-wdgt-btn.btn-default.d-flex.justify-content-center.align-items-center.align-self-stretch.form-control.py-lg-4.py-xl-0
+    {
+        padding: 0.5rem;
+    }
+    .nav-link 
+    {
+        padding: 0 0.2rem !important;
+    }  
+}
+@media (min-width: 992px) {
+    .col-lg {
+        flex: 1 0 0% !important;
+    }
+}
+@media (max-width: 768px) {
+    .booking-form .form-group .form-control.btn {
+        padding: 25px 20px !important;
+    }
+}
+
+
