@@ -1103,7 +1103,7 @@
                             <h4>Say Something</h4>
                             
                             
-                            <form id="contact-form" method="POST" action="contact_mail.php">
+                            <form id="contact-form" method="POST" >
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -1112,17 +1112,17 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input name="Phone" id="Phone" placeholder="Phone No *" class="form-control" type="text">
+                                            <input name="Phone" id="Phone" placeholder="Phone No *" class="form-control" type="text" required>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <input name="Email" id="email" placeholder="Email *" class="form-control" type="email">
+                                            <input name="Email" id="email" placeholder="Email *" class="form-control" type="email" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea name="description" id="message" placeholder="Your message *" rows="5" class="form-control"></textarea>
+                                            <textarea name="description" id="message" placeholder="Your message *" rows="5" class="form-control" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -1134,6 +1134,24 @@
                                     </div>
                                 </div>
                             </form>
+
+
+                            <form action="send_mail.php" method="POST">
+                                <label for="to">To:</label>
+                                <input type="email" id="to" name="to" required><br><br>
+                                
+                                <label for="subject">Subject:</label>
+                                <input type="text" id="subject" name="subject" required><br><br>
+                                
+                                <label for="message">Message:</label><br>
+                                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+                                
+                                <button type="submit">Send Email</button>
+                            </form>
+
+
+
+                            
                         </div>
                     </div>
                     
@@ -1179,6 +1197,33 @@
     <script src="static/js/custom.js"></script>
     <script src="static/js/mail_send.js"></script>
     <!-- end -->
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        var btn=document.getElementById('btn')
+        btn.addEventListener('click', function(e){
+            e.preventDefault()
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+        var body = 'name: '+name + '<br>email: '+email + '<br>message: '+ message; 
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "thirunavukarasu.besant@gmail.com",
+            Password : "qbxmwarxmvgnpmin",
+            To : 'nagarajansvs@gmail.com',
+            From : "you@isp.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+        message => alert(message)
+        );
+    })
+    </script>
+
+
+
 </body>
 <!-- Body End -->
 </html>

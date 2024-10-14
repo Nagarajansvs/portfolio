@@ -34,7 +34,7 @@ $mail = new PHPMailer;
     $mail->Port = 587;                                    // TCP port to connect to
 
     $mail->setFrom($email, $fname.'-'.$lname);
-    $mail->addAddress('nagarajansvs@gmail.com', 'nextgenapplab');  
+    $mail->addAddress('nagarajansvs@gmail.com', 'Nagarajansvs');  
     // Add a recipient
 
     $mail->isHTML(true);                                  // Set email format to HTML

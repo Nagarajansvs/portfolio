@@ -3,11 +3,8 @@ require 'PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
 
-
-
 //$mail->SMTPDebug = 4;   
                             // Enable verbose debug output
-
     $fname = $_POST['fname'];
     // $lname = $_POST['lname'];
     $mobile = $_POST['mobile'];
