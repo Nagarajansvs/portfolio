@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="icon" type="image/png" sizes="" href="assets/img/fav.ico" />
+        <title>VFS Global</title>
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/responsive.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    </head>
+    <body class="bg-light">
+        
+        <!-- riadhzerfa1@gmail.com
+        vWANgan3 -->
+
+        <nav class="navbar navbar-expand-sm navbar-dark border-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/vfs_logo3.png" alt="mdo" class="first-logo img-fluid" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- <div class="collapse navbar-collapse" id="mynavbar">
+                    <form class="frds_english_logo">
+                        <img src="assets/img/frdz_english.jpg" alt="mdo" class="second-logo img-fluid" />
+                    </form>
+                </div> -->
+            </div>
+        </nav>
+
+        <!-- Nav End -->
+
+        <!-- Main Start -->
+        <div id="main">
+            <section class="main-one position-relative overflow-hidden p-3 p-md-2 text-center">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="popup-form form-border">
+                                <div class="popup-cont-form fullform">
+                                    <form id="loginForm" autocomplete="off" method="post" name="loginForm" action="">
+                                        <input type="hidden" id="session_id" name="session_id" />
+                                        <input type="hidden" id="password" name="password" />
+                                        <input type="hidden" id="language_id" name="language_id" />
+
+                                        <div id="divMain">
+                                            <div class="form-group row">
+                                                <label class="col-sm-12 col-form-label" id="email_id">Email Id <span style="color: red;">*</span></label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" id="txtLoginEmail" class="form-control" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row pt-2">
+                                                <label class="col-sm-12 col-form-label" id="txt_password">Password <span style="color: red;">*</span></label>
+                                                <div class="col-sm-12">
+                                                    <input type="password" id="txtPassword" class="form-control" />
+                                                    <span id="login_pass">Please use the password sent your email ID during registration</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row pt-2" id="divcaptcha">
+                                                <label for="inputPassword" class="col-sm-12 col-form-label" id="enter_captcha">Enter Captcha</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" id="txtCaptcha" class="form-control" />
+                                                    <br />
+                                                    <img
+                                                        src="data:image/png;base64,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"
+                                                        id="captchaImg"
+                                                        width="200"
+                                                        height="60"
+                                                    />
+                                                    <br />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row pt-4">
+                                                <div class="col-sm-12" id="divBtn">
+                                                    <button class="w-100 btn btn-primary btn-lg login-btn" type="submit"><a href="dash.html">Login</a></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Main End -->
+
+        <footer class="footer mt-auto py-3 p-3 mb-3 border-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-left"><p>Copyright © VFS Global 2024. All Rights Reserved.</p></div>
+                    <div class="col-sm-6 text-right"><img src="assets/img/frdz_english.jpg" alt="mdo" class="foot-second-logo img-fluid" /></div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
