@@ -8598,3 +8598,35 @@ p.cs_card_subtitle.cs_white_color.mb-0
 {
 line-height: 30px;
 }
+
+.upload_btn
+{
+  border: none;
+}
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.image-item {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+.image-item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (min-width: 576px) {
+  .col-sm-4 {
+      flex: 0 0 auto;
+      width: 33.3333333333%;
+  }
+}
+

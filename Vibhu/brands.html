@@ -111,13 +111,47 @@
                         </p>
                         <h2 class="cs_section_title">Our Brands</h2>
                     </div>
-                    
+                    <div class="cs_section_heading_right">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <form id="image-form">
+                                    <div class="row d-flex justify-content-center cs_iconbox cs_style_2 cs_radius_15">
+                                        <div class="col-md-9">
+                                            <input type="file" name="name" id="image-input" class="cs_form_field" required="">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button type="submit" class="cs_btn cs_style_1 cs_color_1 upload_btn">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="cs_height_50 cs_height_lg_50"></div>
             </div>
             <div class="cs_tab_body">
                 <div class="container-fluide cs_tab active">
-                    <div class="row cs_gap_y_30">
+
+                      <!-- Row to display images -->
+                      <div class="image-row row" id="image-row">
+                        <!-- Uploaded images will appear here -->
+                      </div>
+
+                    <!-- <div class="row d-flex justify-content-center mb-5">
+                        <div class="col-sm-5">
+                            <div class="row d-flex justify-content-center cs_iconbox cs_style_2 cs_radius_15">
+                                <div class="col-md-9">
+                                    <input type="file" name="name" class="cs_form_field" required="">
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="submit" class="cs_btn cs_style_1 cs_color_1 upload_btn">Submit</button>
+                                </div>
+                            </div>  
+                        </div>
+                    </div> -->
+
+                    <div class="row cs_gap_y_30" style="display: ;">
                         <div class="col-lg-3">
                             <div class="cs_card cs_style_1">
                                 <a href="#" class="cs_card_thumbnail d-block">
@@ -374,5 +408,42 @@
         <script src="assets/js/jquery.slick.min.js"></script>
         <script src="assets/js/odometer.js"></script>
         <script src="assets/js/main.js"></script>
+
+        <script>
+            // References to input, form, and image row
+            const imageInput = document.getElementById('image-input');
+            const imageForm = document.getElementById('image-form');
+            const imageRow = document.getElementById('image-row');
+        
+            // Handle form submission
+            imageForm.addEventListener('submit', function(event) {
+              event.preventDefault(); // Prevent form from refreshing the page
+        
+              const file = imageInput.files[0]; // Get the selected file
+              if (file) {
+                // Create a URL for the selected image
+                const imageUrl = URL.createObjectURL(file);
+        
+                // Create a new div for the image
+                const imageItem = document.createElement('div');
+                imageItem.classList.add('image-item');
+        
+                // Create the img element
+                const imgElement = document.createElement('img');
+                imgElement.src = imageUrl;
+        
+                // Add the img element to the div
+                imageItem.appendChild(imgElement);
+        
+                // Append the new image div to the row
+                imageRow.appendChild(imageItem);
+        
+                // Clear the input for the next image
+                imageInput.value = '';
+              } else {
+                alert('Please select an image first!');
+              }
+            });
+          </script>
     </body>
 </html>
