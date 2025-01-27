@@ -7748,6 +7748,7 @@ label {
   top: 0;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  border-top-right-radius: 1rem;
 }
 @media (max-width: 575px) {
   .cs_card.cs_style_1 .cs_card_info_wrapper::after {
@@ -7798,7 +7799,7 @@ label {
   transition: all 0.4s ease;
 }
 .cs_card.cs_style_1 .cs_card_title {
-  font-size: 22px;
+  font-size: 16px;
   margin-bottom: 5px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
