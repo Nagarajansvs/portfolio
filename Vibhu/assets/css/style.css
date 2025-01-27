@@ -8592,3 +8592,8 @@ label {
 .nav-item a.active {
   color: #7ec041;
 }
+
+p.cs_card_subtitle.cs_white_color.mb-0
+{
+line-height: 30px;
+}
