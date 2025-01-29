@@ -1,23 +1,34 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
 
-    $to = "nagarajansvs@gmail.com"; // Replace with your email
-    $subject = "New Contact Form Submission";
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/SMTP.php';
 
-    $email_content = "Name: $name\n";
-    $email_content .= "Email: $email\n\n";
-    $email_content .= "Message:\n$message\n";
+$mail = new PHPMailer(true);
+try {
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com'; // Use your SMTP server
+    $mail->SMTPAuth = true;
+    $mail->Username = 'nagarajansvs@gmail.com'; // Your email
+    $mail->Password = 'your-password'; // Your email password
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
-    if (mail($to, $subject, $email_content, $headers)) {
-        echo "<script>alert('Message sent successfully!'); window.location.href = 'index.html';</script>";
-    } else {
-        echo "<script>alert('Error sending message. Try again later.'); window.location.href = 'index.html';</script>";
-    }
+    $mail->setFrom('nagarajansvs@gmail.com', 'Vibhu Health Care');
+    $mail->addAddress('recipient@example.com');
+
+    $mail->isHTML(true);
+    $mail->Subject = 'Test Email';
+    $mail->Body    = 'Hello, this is a test email from PHPMailer!';
+
+    $mail->send();
+    echo 'Email has been sent successfully!';
+} catch (Exception $e) {
+    echo "Email sending failed: {$mail->ErrorInfo}";
 }
+
+
 ?>
+
+
+
