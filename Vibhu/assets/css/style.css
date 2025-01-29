@@ -3055,9 +3055,9 @@ label {
   color: #fff;
   background-color: var(--accent-color);
 }
-.cs_tab_links.cs_style_3 li a {
+/* .cs_tab_links.cs_style_3 li a {
   padding: 4px 12px;
-}
+} */
 
 .cs_scrollup {
   position: fixed;
