@@ -15,6 +15,7 @@ try {
     $mail->Port = 587;
 
     $mail->setFrom('nagarajansvs@gmail.com', 'Vibhu Health Care');
+    // vibhuhc@gmail.com
     $mail->addAddress('recipient@example.com');
 
     $mail->isHTML(true);
