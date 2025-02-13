@@ -1,35 +1,53 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/SMTP.php';
+// Load PHPMailer
+require 'vendor/autoload.php'; // If installed via Composer
+// require 'PHPMailer/PHPMailerAutoload.php'; // If downloaded manually
 
-$mail = new PHPMailer(true);
-try {
-    $mail->isSMTP();
-    $mail->Host = 'nagarajansvs@gmail.com'; // Use your SMTP server
-    $mail->SMTPAuth = true;
-    $mail->Username = 'nagarajansvs@gmail.com'; // Your email
-    $mail->Password = 'Papababy@143'; // Your email password
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name    = htmlspecialchars($_POST['name']);
+    $email   = htmlspecialchars($_POST['email']);
+    $subject = htmlspecialchars($_POST['subject']);
+    $phone   = htmlspecialchars($_POST['phone']);
+    $message = htmlspecialchars($_POST['message']);
 
-    $mail->setFrom('nagarajansvs@gmail.com', 'Vibhu Health Care');
-    // vibhuhc@gmail.com
-    $mail->addAddress('recipient@example.com');
+    $mail = new PHPMailer(true);
 
-    $mail->isHTML(true);
-    $mail->Subject = 'Test Email';
-    $mail->Body    = 'Hello, this is a test email from PHPMailer!';
+    try {
+        // SMTP Configuration
+        $mail->isSMTP();
+        $mail->Host       = 'nagarajansvs@gmail.com'; // Change for other SMTP providers
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'nagarajansvs@gmail.com'; // Your email
+        $mail->Password   = 'Papababy@143';   // Use "App Password" for security
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
 
-    $mail->send();
-    echo 'Email has been sent successfully!';
-} catch (Exception $e) {
-    echo "Email sending failed: {$mail->ErrorInfo}";
+        // Email Settings
+        $mail->setFrom($email, $name);
+        $mail->addAddress('nagarajansvs@gmail.com', 'Nagarajan'); // Recipient email
+
+        $mail->isHTML(true);
+        $mail->Subject = "New Contact Form Submission: $subject";
+        $mail->Body    = "
+            <h3>Contact Details:</h3>
+            <p><b>Name:</b> $name</p>
+            <p><b>Email:</b> $email</p>
+            <p><b>Phone:</b> $phone</p>
+            <p><b>Message:</b> $message</p>
+        ";
+
+        // Send Email
+        if ($mail->send()) {
+            echo "<script>alert('Message sent successfully!'); window.location.href='index.html';</script>";
+        } else {
+            echo "<script>alert('Error sending message.');</script>";
+        }
+
+    } catch (Exception $e) {
+        echo "<script>alert('Message could not be sent. Error: {$mail->ErrorInfo}');</script>";
+    }
 }
-
-
 ?>
-
-
-
