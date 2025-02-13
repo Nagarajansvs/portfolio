@@ -7,10 +7,10 @@ require 'PHPMailer/SMTP.php';
 $mail = new PHPMailer(true);
 try {
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com'; // Use your SMTP server
+    $mail->Host = 'nagarajansvs@gmail.com'; // Use your SMTP server
     $mail->SMTPAuth = true;
     $mail->Username = 'nagarajansvs@gmail.com'; // Your email
-    $mail->Password = 'your-password'; // Your email password
+    $mail->Password = 'Papababy@143'; // Your email password
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
