@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port       = 587;                                    // TCP port to connect to
 
         // Recipients
-        $mail->setFrom('nagarajansvs', 'Mailer');
+        $mail->setFrom('nagarajansvs@gmail.com', 'Mailer');
         $mail->addAddress('recipient@example.com');                 // Add a recipient
 
         // Content
